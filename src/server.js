@@ -2,9 +2,9 @@
 
 import express from "express";
 import cors from "cors";
-import config from "./config/index.mjs";
-import db from "./config/db.mjs";
-import userRouter from "./api/user.mjs";
+import config from "./config/index.js";
+import db from "./config/db.js";
+import userRouter from "./api/user.js";
 
 const express = require('express');
 const app = express();
