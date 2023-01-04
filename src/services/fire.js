@@ -1,5 +1,9 @@
 import admin from "firebase-admin";
 import config from "../config/index.js";
+var admin = require("firebase-admin");
+
+var serviceAccount = require("./services/src/serviceAccountKey.json");
+
 
 const serviceAccount = {
   project_id: config.FIREBASE_PROJECT_ID,
@@ -12,6 +16,10 @@ const serviceAccount = {
   auth_provider_x509_cert_url: config.FIREBASE_AUTH_CERT_URL,
   client_x509_cert_url: config.FIREBASE_CLIENT_CERT_URL
 };
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+});
 
 const firebase = admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
