@@ -1,5 +1,3 @@
-// console.log('May Node be with you')
-
 import express from "express";
 import cors from "cors";
 import config from "./config/index.js";
@@ -8,8 +6,6 @@ import userRouter from "./api/user.js";
 
 const express = require('express');
 const app = express();
-
-
 
 app.use(cors({ origin: true }));
 app.use(express.json());
