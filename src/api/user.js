@@ -29,7 +29,7 @@ router.post("/", async (req, res) => {
       await donatelloCollection.insertOne({
         email,
         name,
-        firebaseId: newFirebaseUser.uid
+        firebaseId: newFirebaseDonatello.uid
       });
     }
     return res
