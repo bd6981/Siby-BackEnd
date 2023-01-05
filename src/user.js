@@ -1,5 +1,5 @@
 
-	const mongoose = require("../db/connections.js");
+	const mongoose = require("./connections.js");
   const Schema = mongoose.Schema;
 
   const userSchema = new Schema({
@@ -9,5 +9,5 @@
    
   });
 
-  const User = mongoose.model("user", userSchema);
+  const User = mongoose.model("User", userSchema);
   module.exports = User;
