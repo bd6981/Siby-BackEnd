@@ -6,8 +6,10 @@
    
    
     email: String,
-    password: String,
     name: String,
+    password: String,
+    confirmPassword: String
+    
    
   });
 

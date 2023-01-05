@@ -7,7 +7,7 @@ const dateData = seedDay.map((data) => ({
   day: data.day,
 }));
 
-Date.deleteMany({}).then(() => {
+user.deleteMany({}).then(() => {
   dateData.forEach((date) => {
     Date.insertMany({
       day: date.day,
@@ -17,13 +17,13 @@ Date.deleteMany({}).then(() => {
   });
 });
 
-Task.deleteMany({}).then(() => {
-  for (let i = 0; i < seedTask.length; i++) {
-    Task.create(
+user.deleteMany({}).then(() => {
+  for (let i = 0; i < seedUser.length; i++) {
+    User.create(
       {
-        title: seedTask[i].title,
-        isCompleted: seedTask[i].isCompleted,
-        dayIndex: seedTask[i].dayIndex,
+        title: seedUser[i].title,
+        isCompleted: seedUser[i].isCompleted,
+        dayIndex: seedUser[i].dayIndex,
       },
       async function (err, res) {
         console.log(res);
