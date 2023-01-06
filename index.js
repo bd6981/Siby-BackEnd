@@ -4,8 +4,7 @@ const app = express();
 app.set("port", process.env.PORT || 8000);
 
 const cors = require("cors");
-app.use(
-  cors({
+app.use(cors({
     origin: "*",
   })
 );
@@ -18,7 +17,7 @@ app.get("/", (req, res) => {
 });
 
 const userController = require("./src/userController");
-app.use("/api/user/", userController);
+app.use("/api/user", userController);
 
 
 app.listen(app.get("port"), () => {

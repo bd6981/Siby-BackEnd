@@ -1,13 +1,10 @@
-
 const express = require("express");
-
 const router = express.Router();
-
 const User = require("./user");
 
 router.get("/", async (req, res, next) => {
   try {
-    const user = await user.find({});
+    const user = await User.find({});
     res.json(user);
   } catch (err) {
     next(err);
@@ -16,7 +13,7 @@ router.get("/", async (req, res, next) => {
 
 router.get("/:id", async (req, res, next) => {
   try {
-    const user = await user.findById(req.params.id);
+    const user = await User.findById(req.params.id);
     res.json(user);
   } catch (err) {
     next(err);
@@ -36,7 +33,6 @@ router.post("/", async (req, res, next) => {
   }
 });
 
-
 router.put("/:id", async (req, res, next) => {
   try {
     const userToUpdate = await User.findByIdAndUpdate(req.params.id, req.body, {
@@ -47,7 +43,6 @@ router.put("/:id", async (req, res, next) => {
       // send back updated bookmark
       res.json(userToUpdate);
     } else {
-      // else send back 404 Not Found
       res.sendStatus(404);
     }
   } catch (error) {
