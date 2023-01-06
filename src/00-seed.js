@@ -1,8 +1,6 @@
 const mongoose = require("./connections");
 const Date = require("../model/user");
 
-
-
 const dateData = seedDay.map((data) => ({
   day: data.day,
 }));
